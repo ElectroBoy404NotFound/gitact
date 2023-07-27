@@ -32,10 +32,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Generate JNI files
         run: |
-          javac -h . JNIFile.java
-          g++ -c -fPIC -I${JAVA_HOME}/include -I${JAVA_HOME}/include/linux *.cpp -o jni.o | true
+          javac -h . MiniRV32IMA.java
+          g++ -c -fPIC -I${JAVA_HOME}/include -I${JAVA_HOME}/include/linux MiniRV32IMA.cpp -o MiniRV32IMA_jni.o | true
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
           name: "JNI"
-          path: "*"
+          path: "MiniRV32IMA.*"
