@@ -1,6 +1,8 @@
 package me.electroboy404notfound.rv32ima;
 
-public class MiniRV32IMAState {
+public class MiniRV32IMA {
+  public native int MiniRV32IMAStep(MiniRV32IMAState state, long elapsedUs, int count);
+	public class MiniRV32IMAState {
 	public long regs[] = new long[32];
 
 	public long pc = 0;
@@ -28,7 +30,4 @@ public class MiniRV32IMAState {
 	// Bit 3+ = Load/Store reservation LSBs.
 	public long extraflags = 0;
 }
-
-public class MiniRV32IMA {
-  public native int MiniRV32IMAStep(MiniRV32IMAState state, long elapsedUs, int count);
 }
