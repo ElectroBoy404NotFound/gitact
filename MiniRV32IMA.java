@@ -29,6 +29,6 @@ public class MiniRV32IMAState {
 	public long extraflags = 0;
 }
 
-public class JNIFile {
+public class MiniRV32IMA {
   public native int MiniRV32IMAStep(MiniRV32IMAState state, long elapsedUs, int count);
 }
