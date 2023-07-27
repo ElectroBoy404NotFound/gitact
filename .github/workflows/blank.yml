@@ -33,5 +33,9 @@ jobs:
       - name: Generate JNI files
         run: |
           javac -h . JNIFile.java
-          g++ -c -fPIC -I${JAVA_HOME}/include -I${JAVA_HOME}/include/linux com_baeldung_jni_HelloWorldJNI.cpp -o com_baeldung_jni_HelloWorldJNI.o
-
+          g++ -c -fPIC -I${JAVA_HOME}/include -I${JAVA_HOME}/include/linux *.cpp -o jni.o | true
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: "JNI"
+          path: "*"
