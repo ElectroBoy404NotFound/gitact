@@ -1,4 +1,5 @@
 #include "me_electroboy404notfound_rv32ima_MiniRV32IMA.h"
+#include <stdint.h>
 
 #ifndef MINIRV32WARN
 	#define MINIRV32WARN( x... );
